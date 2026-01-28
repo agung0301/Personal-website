@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+}
+
+h1, .navbar-brand {
+    font-family: 'Syncopate', sans-serif; /* Font lebar yang terkesan mahal */
+}
+
+/* Navigasi */
+.navbar {
+    border-bottom: 1px solid #222;
+}
+
+/* Custom Image Frame */
+.border-custom {
+    border: 1px solid #333;
+    padding: 15px;
+    background: #111;
+    filter: grayscale(100%); /* Bikin foto hitam putih agar lebih mafia */
+    transition: 0.5s ease;
+}
+
+.border-custom:hover {
+    filter: grayscale(0%);
+    border-color: #00ff88;
+}
+
+/* Tombol ala High-End Agency */
+.btn-primary {
+    background-color: #00ff88;
+    border: none;
+    color: black;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: black;
+    transform: translateY(-3px);
+}
+
+/* Project Card Dark */
+.card {
+    background-color: #111 !important;
+    border: 1px solid #222 !important;
+}
+
+.card-title {
+    color: #00ff88;
+    font-weight: 700;
+}
