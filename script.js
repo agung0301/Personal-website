@@ -35,6 +35,28 @@ document.addEventListener('DOMContentLoaded', function () {
     sr.reveal('.card', { interval: 200 });
     sr.reveal('#contact form', { delay: 200 });
 
+
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault(); 
+
+            const myForm = event.target;
+            const formData = new FormData(myForm);
+
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                alert("Pesan berhasil dikirim! Makasih ya Gung.");
+                myForm.reset(); 
+            })
+            .catch(error => alert("Waduh, ada error: " + error));
+        });
+    }
+
     const dot = document.getElementById('cursor-dot');
     const outline = document.getElementById('cursor-outline');
 
