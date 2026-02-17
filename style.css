@@ -24,6 +24,11 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
 }
+.main-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
 
 h1,
 .navbar-brand {
@@ -31,6 +36,8 @@ h1,
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--bg-dark);
 }
