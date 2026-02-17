@@ -1,24 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const typingElement = document.querySelector('#typing-text');
-    
+
     if (typingElement) {
         new Typed('#typing-text', {
             strings: [
-                'Full Stack Developer.', 
-                'Digital Architect.', 
-                'Cyber Security Specialist.', 
-                'Innovation Strategist.', 
-                'Tech Enthusiast.',
-                'Problem Solver.',
-                'Web developer.',
-                'Web designer.'
+                'Frontend Developer.',
+                'React Specialist.',
+                'Full Stack Enthusiast.',
+                'Innovation Strategist.',
+                'JavaScript Developer.',
+                'Responsive Web Designer.'
             ],
-            typeSpeed: 50,     
-            backSpeed: 30,      
-            backDelay: 2000,    
-            loop: true,         
-            cursorChar: '_',    
-            smartBackspace: true 
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true,
+            cursorChar: '_',
+            smartBackspace: true
         });
     }
 
@@ -27,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
         distance: '60px',
         duration: 1000,
         delay: 200,
-        reset: true, 
-        mobile: true 
+        reset: true,
+        mobile: true
     });
 
     sr.reveal('.display-2', { origin: 'left', distance: '100px' });
     sr.reveal('.lead', { delay: 400 });
     sr.reveal('.photo-frame', { delay: 500, origin: 'right' });
-    sr.reveal('.card', { interval: 200 }); 
+    sr.reveal('.card', { interval: 200 });
     sr.reveal('#contact form', { delay: 200 });
 
     const dot = document.getElementById('cursor-dot');

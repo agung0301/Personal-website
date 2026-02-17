@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;800&display=swap');
 
-html, body {
+html,
+body {
     max-width: 100%;
-    overflow-x: hidden;
-    position: relative;
 }
+
 section {
     position: relative;
 }
+
 :root {
     --primary-color: #00ff88;
     --bg-dark: #0a0a0a;
@@ -22,10 +23,10 @@ body {
     font-family: var(--font-inter);
     background-color: var(--bg-dark);
     color: var(--text-main);
-    overflow-x: hidden;
 }
 
-h1, .navbar-brand {
+h1,
+.navbar-brand {
     font-family: var(--font-sync);
 }
 
@@ -122,11 +123,16 @@ textarea:-webkit-autofill {
     box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
 }
 
-body, a, button, input, textarea {
+body,
+a,
+button,
+input,
+textarea {
     cursor: none !important;
 }
 
-#cursor-dot, #cursor-outline {
+#cursor-dot,
+#cursor-outline {
     position: fixed;
     top: 0;
     left: 0;
@@ -160,9 +166,33 @@ body, a, button, input, textarea {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+.thumbnail-wrapper {
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+}
+
+.project-thumb {
+    width: 100%;
+    height: auto;
+    object-fit: none;
+    object-position: top;
+    transition: transform 3s ease-in-out;
+}
+
+.project-card:hover .project-thumb {
+    transform: translateY(calc(-100% + 250px));
+}
+
+.text-success {
+    color: #00ff88 !important;
+    text-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+}
+
 .load-hidden {
     visibility: hidden;
 }
+
 #contact .row {
     display: flex;
     justify-content: center;
@@ -178,6 +208,7 @@ body, a, button, input, textarea {
 #contact .border-custom {
     padding: 30px !important;
 }
+
 footer {
     background-color: #050505;
     border-top: 1px solid #111;
@@ -202,24 +233,133 @@ footer {
     text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
 }
 
+.typing-container {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.typing-wrapper {
+    display: flex;
+    gap: 8px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+#typing-text {
+    color: var(--primary-color);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.skill-card {
+    background: #000;
+    border: 1px solid #333;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    height: 100%;
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: #00ff88;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.skill-card h4 {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-card p {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.skill-card:hover {
+    border-color: #00ff88;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    height: 100%;
+}
+
 @media (max-width: 768px) {
     .border-custom {
         max-width: 250px !important;
         margin-top: 30px;
         border-width: 5px !important;
     }
-    .display-2 { font-size: 2.8rem !important; }
-    #hero { text-align: center; padding-top: 20px; }
-    .d-flex { justify-content: center; }
-    #contact { padding: 0 15px; }
-    
-    body, a, button, input, textarea {
+
+    .display-2 {
+        font-size: 2.8rem !important;
+    }
+
+    #hero {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .d-flex {
+        justify-content: center;
+    }
+
+    #contact {
+        padding: 0 15px;
+    }
+
+    body,
+    a,
+    button,
+    input,
+    textarea {
         cursor: auto !important;
     }
-    #cursor-dot, 
+
+    #cursor-dot,
     #cursor-outline {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+        letter-spacing: 1px;
+    }
+
+    .typing-container {
+        justify-content: center;
+        min-height: 70px;
+    }
+
+    .typing-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        font-size: 0.9rem;
+    }
+
+    #typing-text {
+        margin-top: 2px;
     }
 }
