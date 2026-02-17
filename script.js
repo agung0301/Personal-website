@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.querySelector('form');
     if (contactForm) {
         contactForm.addEventListener("submit", (event) => {
-            event.preventDefault(); 
+            event.preventDefault();
 
             const myForm = event.target;
             const formData = new FormData(myForm);
@@ -49,11 +49,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData).toString()
             })
-            .then(() => {
-                alert("Pesan berhasil dikirim! Makasih ya Gung.");
-                myForm.reset(); 
-            })
-            .catch(error => alert("Waduh, ada error: " + error));
+                .then(() => {
+                    Swal.fire({
+                        title: 'Message Sent!',
+                        text: 'Terima kasih, pesan kamu sudah masuk ke radar saya.',
+                        icon: 'success',
+                        iconColor: '#2ecc71',
+                        background: '#0a0a0a',
+                        color: '#fff',
+                        confirmButtonColor: '#2ecc71',
+                        confirmButtonText: 'Oke dimengerti!',
+                        backdrop: `rgba(46, 204, 113, 0.1) `
+                    });
+                    myForm.reset();
+                })
+                .catch(error => {
+                    Swal.fire({
+                        title: 'Signal Lost!',
+                        text: 'Maaf, pesan kamu gagal masuk ke radar saya karena gangguan koneksi.',
+                        icon: 'error',
+                        iconColor: '#e74c3c', 
+                        background: '#0a0a0a',
+                        color: '#fff',
+                        confirmButtonColor: '#e74c3c',
+                        confirmButtonText: 'Coba Lagi!',
+                        backdrop: `rgba(231, 76, 60, 0.1)`
+                    });
+                    console.error("Submission Error:", error);
+                });
         });
     }
 
